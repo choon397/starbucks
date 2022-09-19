@@ -1,0 +1,108 @@
+/* COMMON */
+body {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #333;
+}
+img {
+    display: block;
+}
+a { /*밑줄제외시킴*/
+    text-decoration: none;
+}
+
+/* HEADER */
+header {
+    background-color: #f6f5f0;
+    border-bottom: 1px solid #c8c8c8;
+}
+header .inner {
+    /*background-color: orange;*/
+    width: 1100px;
+    height: 120px;
+    margin: 0 auto;
+    position: relative;
+}
+header .logo {
+    height: 75px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    /*display: none;*/
+}
+
+header .sub-menu {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    display: flex;/*서치맨마지막에 적용 서치 부분 가로로 만듬*/
+}
+header .sub-menu ul.menu {
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+header .sub-menu ul.menu li {
+    position: relative;
+}
+header .sub-menu ul.menu li::before {   /*메뉴사이사이 구분선 만들기*/
+    content: "";
+    /*display: block; !*before block 아니고 인라인인가라서 바꿔줌. 포지션 선언후삭제 *!*/
+    width: 1px;
+    height: 12px;
+    background-color: #e5e5e5;
+    position: absolute; /*부모 li 에 릴레이션 선언*/
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+header .sub-menu ul.menu li:first-child::before { /*메뉴사이사이 구분선 맨 앞 삭제*/
+    display: none;
+}
+header .sub-menu ul.menu li a {
+    font-size: 16px;
+    padding: 11px 16px;
+    display: block;
+    color: #656565;
+}
+header .sub-menu ul.menu li a:hover {
+    color: #000;
+}
+header .sub-menu .search {
+    /*background-color: red;*//*서치 영역 확인위해 넣었다가 flex 이후 삭제*/
+    height: 34px;
+    position: relative;/*서치 메터리얼 위치 */
+}
+header .sub-menu .search input {
+    width: 36px;
+    height: 34px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+    outline: none;  /*클릭시 테두리선 사용아하안*/
+    background-color: #fff;
+    color: #777;
+    /*밑에 포커스 추가후*/
+    font-size: 12px;
+    transition: width .4s;
+}
+header .sub-menu .search input:focus {
+    width: 190px;
+    border-color: #669900;
+}
+header .sub-menu .search .material-icons {
+    height: 24px;
+    position: absolute;
+    top: 0;
+    right: 5px;
+    bottom: 0;
+    margin: auto;
+    transition: .4s;
+}
+header .sub-menu .search.focused .material-icons {
+    opacity: 0;
+}
+
